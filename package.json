@@ -1,9 +1,16 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "Keep track of your burgies",
-  "main": "index.js",
+  "description": "Keep track of the burgers you'll eat!",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {},
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
@@ -15,10 +22,5 @@
   "bugs": {
     "url": "https://github.com/acuteangel/burger/issues"
   },
-  "homepage": "https://github.com/acuteangel/burger#readme",
-  "dependencies": {
-    "express": "^4.16.4",
-    "express-handlebars": "^3.0.0",
-    "mysql": "^2.16.0"
-  }
+  "homepage": "https://github.com/acuteangel/burger#readme"
 }
