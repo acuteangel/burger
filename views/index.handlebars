@@ -1,0 +1,93 @@
+<header>
+  <h1>Eat a Burgie!</h1>
+</header>
+  
+<div id= "devour-false">
+  <h2>Burgies that are not eaten!</h2>
+
+  <ul>
+    {{#each burgers}}
+      {{#unless devoured}}
+          <li>
+              {{burger_name}}
+
+              <button class="devour" data-id="{{id}}">
+                  Nom it!
+              </button>            
+          </li>
+      {{/unless}}
+    {{/each}}
+  </ul>
+</div>
+
+<img src="./assets/images/Cartoon_Burgie.png" id="burgie-img">
+
+<div id="devour-true">
+  <h2>Burgies that were eaten!</h2>
+
+  <ul >
+    {{#each burgers}}
+      {{#if devoured}}
+          <li>
+              {{burger_name}}            
+          </li>
+      {{/if}}
+    {{/each}}
+  </ul>
+</div>
+<div id="form-div">
+  <h2>Add a burgie</h2>
+  <form class="create-form">
+
+    <div class="form-group">
+      <label for="burg">Burgie Name:</label>
+      <input type="text" id="burg" name="name">
+    </div>
+
+    <button type="submit">Add burgie</button>
+  </form>
+</div>
+
+<script type='text/javascript'>
+    $(".devour").on("click", function(event) {
+        var id = $(this).data("id");
+        
+        var nowDevoured = {
+        devoured: true
+        };
+
+        // Send the PUT request.
+        $.ajax("/api/burgers/" + id, {
+        type: "PUT",
+        data: nowDevoured
+        }).then(
+        function() {
+            console.log("devoured burgie #"+id);
+            // Reload the page to get the updated list
+            location.reload();
+        }
+        );
+    });
+
+    $(".create-form").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    var newBurger = {
+      burger_name: $("#burg").val().trim(),
+      devoured: false
+    };
+
+    // Send the POST request.
+    $.ajax("/api/burgers", {
+      type: "POST",
+      data: newBurger
+    }).then(
+      function() {
+        console.log("created new burger");
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+</script>

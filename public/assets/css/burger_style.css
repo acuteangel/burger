@@ -1,0 +1,66 @@
+body {
+    background-image: url("../images/BNY0EganX2EzLUQg4wSOVhfZzz-cPGM0lXSEI6GUZGk.png");
+    margin: auto;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+#wrapper {
+    background-color: rgba(0, 0, 0, 50%);
+    margin: auto;
+    margin-top: 40px;
+    width: 960px;
+    display: grid;    
+    grid-template-areas:
+    'header header header'
+    'not image devoured' 
+    'form form form';
+    
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+h1, h2, li, button, form, input {
+    margin: 10px;
+}
+h1{
+    font-size: 50px;
+}
+li{
+    font-size: 24px;
+}
+
+header{
+    grid-area: header;
+    padding: 20px 0;
+    margin: auto;
+}
+
+#devour-false{
+    grid-area: not;
+    padding: 20px 0;
+}
+
+#devour-true {
+    grid-area: devoured;
+    padding: 20px 0;
+}
+
+#form-div {
+    grid-area: form;
+    padding: 20px 0;
+    margin: auto;
+}
+
+#burgie-img {
+    grid-area: image;
+}
+
+button {
+    background-color: green;
+    border: 2px black solid;    
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 35px;
+    align-self: right;
+}
