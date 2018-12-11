@@ -1,16 +1,16 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "",
+  "description": "Keep track of your burgies",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/acuteangel/burger.git"
   },
-  "author": "",
+  "author": "Angel Aquas",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/acuteangel/burger/issues"
