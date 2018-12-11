@@ -54,6 +54,7 @@ header{
 
 #burgie-img {
     grid-area: image;
+    max-width: 300px;
 }
 
 button {
